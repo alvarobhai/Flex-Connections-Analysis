@@ -1,0 +1,4 @@
+Industrial segment,DSR type / end-use,End-use load share (%),Flex reduction (%),Flex cost (£/MWh),DSR capacity (% of load),Evidence / note,DSR capacity (MW) for 250 MW customer
+Data Centres,Cooling & thermal management,20.0,25.0,200.0,5.0,Illustrative modelling assumption; cost not directly sourced.,12.5
+Data Centres,Building / auxiliary systems,10.0,30.0,225.0,3.0,Illustrative modelling assumption; cost not directly sourced.,7.5
+Data Centres,IT workload shifting,20.0,100.0,250.0,20.0,20% of data-centre power associated with shiftable workloads; up to 22% load shedding in Alibaba-trace study. Cost is illustrative.,50.0

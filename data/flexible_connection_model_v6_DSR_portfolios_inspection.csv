@@ -1,0 +1,16 @@
+Scenario,Firmness,Required flexibility (MW),Cooling DSR (MW),Auxiliary DSR (MW),IT workload DSR (MW),Total DSR (MW),Solar (MW),Storage (MW),Storage (MWh),Max DSR duration (h),DSR recovery
+High Year-Round Headroom + Short Summer Constraints,50%,5.424374861425747,5.424374861425747,0.0,0.0,5.424374861425747,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+High Year-Round Headroom + Short Summer Constraints,80%,7.301245267466527,7.301245267466527,0.0,0.0,7.301245267466527,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+High Year-Round Headroom + Short Summer Constraints,90%,7.332603088043328,7.332603088043328,0.0,0.0,7.332603088043328,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+High Year-Round Headroom + Short Summer Constraints,95%,7.535047704389512,7.5,0.03504770438951166,0.0,7.535047704389512,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+High Year-Round Headroom + Short Summer Constraints,100%,7.535047704389512,7.5,0.03504770438951166,0.0,7.535047704389512,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Variable Headroom + Summer Constraints,50%,7.728743350575769,7.5,0.228743350575769,0.0,7.728743350575769,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Variable Headroom + Summer Constraints,80%,30.262248651166715,7.5,5.0,17.762248651166715,30.262248651166715,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Variable Headroom + Summer Constraints,90%,35.83523919991953,7.5,5.0,23.335239199919528,35.83523919991953,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Variable Headroom + Summer Constraints,95%,37.16466602066277,7.5,5.0,24.66466602066277,37.16466602066277,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Variable Headroom + Summer Constraints,100%,37.48949474366512,7.5,5.0,24.98949474366512,37.48949474366512,0.0,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Lower & More Persistent Summer Headroom,50%,45.34574018804881,7.5,5.0,25.0,37.5,15.691480376097616,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Lower & More Persistent Summer Headroom,80%,59.76332473140869,7.5,5.0,25.0,37.5,44.526649462817375,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Lower & More Persistent Summer Headroom,90%,63.5949351663854,7.5,5.0,25.0,37.5,52.189870332770795,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Lower & More Persistent Summer Headroom,95%,65.03144745701161,7.5,5.0,25.0,37.5,55.06289491402322,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
+Lower & More Persistent Summer Headroom,100%,65.57630318278501,7.5,5.0,25.0,37.5,56.15260636557002,0,0,3,Cooling 4h / Auxiliary 2h / IT 8h
