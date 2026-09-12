@@ -1,16 +1,16 @@
-Scenario,Firmness threshold,Constraint days addressed,Flex capacity required (MW),Flex capacity (% peak load),Maximum associated duration (h)
-High Year-Round Headroom + Short Summer Constraints,50%,6,5.4,2.2,1
-High Year-Round Headroom + Short Summer Constraints,80%,10,7.3,2.9,3
-High Year-Round Headroom + Short Summer Constraints,90%,11,7.3,2.9,3
-High Year-Round Headroom + Short Summer Constraints,95%,12,7.5,3.0,3
-High Year-Round Headroom + Short Summer Constraints,100%,12,7.5,3.0,3
-Variable Headroom + Summer Constraints,50%,18,7.7,3.1,1
-Variable Headroom + Summer Constraints,80%,28,30.3,12.1,3
-Variable Headroom + Summer Constraints,90%,32,35.8,14.3,3
-Variable Headroom + Summer Constraints,95%,34,37.2,14.9,3
-Variable Headroom + Summer Constraints,100%,35,37.5,15.0,3
-Lower & More Persistent Summer Headroom,50%,35,45.3,18.1,3
-Lower & More Persistent Summer Headroom,80%,56,59.8,23.9,3
-Lower & More Persistent Summer Headroom,90%,63,63.6,25.4,3
-Lower & More Persistent Summer Headroom,95%,67,65.0,26.0,3
-Lower & More Persistent Summer Headroom,100%,70,65.6,26.2,3
+Scenario,Connection Capacity Firmness,Equivalent Connection Capacity (MW),Required Flex (MW),Required Flex (% peak load),Flex-Dependent Hours (% year)
+High Year-Round Headroom + Short Summer Constraints,50,125.0,0,0.0,0.0
+High Year-Round Headroom + Short Summer Constraints,80,200.0,23.978893610973614,9.591557444389446,1.2785388127853883
+High Year-Round Headroom + Short Summer Constraints,90,225.0,48.978893610973614,19.591557444389444,3.036529680365297
+High Year-Round Headroom + Short Summer Constraints,95,237.5,61.478893610973614,24.591557444389444,3.858447488584475
+High Year-Round Headroom + Short Summer Constraints,100,250.0,73.97889361097361,29.591557444389444,5.502283105022831
+Variable Headroom + Summer Constraints,50,125.0,0,0.0,0.0
+Variable Headroom + Summer Constraints,80,200.0,61.33801835531543,24.53520734212617,2.7968036529680362
+Variable Headroom + Summer Constraints,90,225.0,86.33801835531543,34.53520734212617,6.495433789954339
+Variable Headroom + Summer Constraints,95,237.5,98.83801835531543,39.53520734212617,13.584474885844749
+Variable Headroom + Summer Constraints,100,250.0,111.33801835531543,44.53520734212617,24.178082191780824
+Lower & More Persistent Summer Headroom,50,125.0,2.453124410376887,0.9812497641507548,0.1141552511415525
+Lower & More Persistent Summer Headroom,80,200.0,77.45312441037689,30.981249764150753,5.251141552511415
+Lower & More Persistent Summer Headroom,90,225.0,102.45312441037689,40.98124976415075,9.246575342465754
+Lower & More Persistent Summer Headroom,95,237.5,114.95312441037689,45.98124976415075,22.077625570776256
+Lower & More Persistent Summer Headroom,100,250.0,127.45312441037689,50.98124976415076,48.49315068493151

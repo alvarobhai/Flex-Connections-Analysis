@@ -1,37 +1,47 @@
-# Flexible Connection Capacity Explorer — V1
+# Flexible Connection Capacity Explorer — V2
 
-Static GitHub Pages dashboard for screening how much additional connection capacity a constrained network can support when a customer can provide flexibility.
+Static GitHub Pages dashboard for screening how much connection capacity a constrained network can support when a customer can provide flexibility.
 
 ## Package
 - `index.html` — dashboard application
-- `data/model.json` — V6 central-case headroom, firmness thresholds, DSR portfolio and data-centre assumptions
+- `data/model.json` — V6 hourly headroom profiles
+- `data/flexible_connection_model_v6_firmness_thresholds_final.csv` — central-case outputs for the five connection firmness levels
+- `data/flexible_connection_model_v6_DSR_portfolios_inspection.csv` — DSR portfolio inspection data
+- `data/dsr_economic_capacity_by_segment.csv` and `data/dsr_economic_merit_order.csv` — economic DSR inputs
+- `data/data_centre_dsr_v6_assumptions.csv` — data-centre DSR assumptions
 
-## Model logic
-**Network capacity + customer load profile → hourly constraint → flexibility requirement → connection firmness.**
+## Connection firmness methodology
+The dashboard models five **Connection Capacity Firmness** levels: 50%, 80%, 90%, 95% and 100%. These are no longer percentages of constraint events addressed.
 
-Three headroom scenarios are shown simultaneously:
-1. High Year-Round Headroom + Short Summer Constraints
-2. Variable Headroom + Summer Constraints
-3. Lower & More Persistent Summer Headroom
+For a requested connection of `P` MW and firmness `F`: 
+1. **Equivalent Connection Capacity** = `P × F`.
+2. For each hour, compare the equivalent connection capacity with the available network headroom.
+3. **Hourly flexibility requirement** = `max(0, Equivalent Connection Capacity − Available Headroom)`.
+4. **Required Flex (MW)** is the maximum hourly shortfall.
+5. **Flex-Dependent Hours (% of Year)** is the share of hours where the hourly shortfall is greater than zero.
+6. Available economic **DSR** is applied first; **BTM Flex** is the residual flexibility requirement.
 
-The central data-centre DSR case is 15% of a 250 MW customer: 7.5 MW cooling/thermal, 5 MW auxiliary systems and 25 MW IT workload shifting. The illustrative costs are £200/MWh, £225/MWh and £250/MWh respectively.
+This explicitly separates the connection-capacity firmness level from how often flexibility is required.
 
-DSR duration is 3 hours, with recovery assumptions of 4h cooling, 2h auxiliary and 8h IT workload. Solar is represented as coincident generation; storage is retained as a simple option and becomes relevant if solar/storage assumptions are extended.
+## Load types and DSR
+- **Data Centres:** central economic DSR = 15% of peak load, comprising cooling/thermal, auxiliary systems and IT workload shifting.
+- **Industrial & Manufacturing:** economic DSR uses the CLF-derived industrial segment merit order, with the closest-match `Other Industrial & Process Loads` portfolio in the dashboard.
+- **Large Commercial / Mixed-use:** economic DSR uses the CLF `Offices & Business Services` end-use portfolio rather than a generic commercial label.
+
+DSR is applied in merit order up to the available economic capacity; BTM Flex fills any residual requirement.
+
+## Heatmap
+The heatmap shows **Non-Firm Capacity (% of Requested Load)** by hour and day. It uses the selected customer load profile, so the non-firm share varies with both hourly customer demand and network headroom.
+
+## Display conventions
+- MW values above 10 MW are rounded to the nearest MW.
+- Smaller MW values retain one decimal place.
+- DSR and BTM Flex table headers are highlighted and include hover definitions.
+- Table column headers include hover definitions explaining the model terms.
+- The headline cards focus on the 90% firmness proposition, with a secondary 100% firmness benchmark.
 
 ## Design reference
-The visual language intentionally follows the supplied GB Industrial & Commercial Flexibility Explorer: light grey/white canvas, compact left-hand controls, restrained typography, thin borders, KPI cards, and chart-led results.
+The visual language follows the supplied GB Industrial & Commercial Flexibility Explorer: light grey/white canvas, compact left-hand controls, restrained typography, thin borders, KPI cards, and chart-led results.
 
 ## Deployment
 Upload the contents of this folder to a GitHub repository with GitHub Pages enabled. No build step or server is required.
-
-## Updated connection firmness methodology
-The dashboard now treats the five rows (50%, 80%, 90%, 95%, 100%) as **Connection Capacity Firmness** levels, rather than percentages of constraint events addressed.
-
-For a requested connection of `P` MW:
-- Equivalent Connection Capacity = `P × firmness`.
-- For each hour, required flexibility to make that equivalent capacity firm is `max(0, equivalent connection capacity − available network headroom)`.
-- Required Flex (MW) is the maximum hourly shortfall.
-- Flex-Dependent Hours (% of Year) is the share of hours where the hourly shortfall is greater than zero.
-- DSR is applied first up to the available economic DSR capacity for the selected load type; BTM Flex is the residual requirement.
-
-This separates the contractual/connection-capacity concept of firmness from the frequency with which flexibility is called upon.
