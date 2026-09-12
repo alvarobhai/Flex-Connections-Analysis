@@ -1,3 +1,7 @@
+## Deployment note — Model v13
+
+The dashboard is self-contained: `index.html` embeds the model data and does not fetch `data/model.json` at runtime. `data/model.json` is retained as a reference copy.
+
 # Flexible Connection Capacity Explorer — V2
 
 Static GitHub Pages dashboard for screening how much connection capacity a constrained network can support when a customer can provide flexibility.
@@ -45,3 +49,7 @@ The visual language follows the supplied GB Industrial & Commercial Flexibility 
 
 ## Deployment
 Upload the contents of this folder to a GitHub repository with GitHub Pages enabled. No build step or server is required.
+
+
+### Static hosting
+The dashboard embeds the model data in `index.html` so it works reliably on GitHub Pages and other static hosts where relative JSON fetches can fail. The source `data/model.json` is retained in the repository for transparency and reuse.
